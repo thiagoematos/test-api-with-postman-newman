@@ -7,8 +7,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Run"
-          command: |
-            npm -v
-            npm install
-            npm run report
+          name: "Install Dependencies"
+          command: npm install
+      - run:
+          name: "Execute"
+          command: npm run report
+      - store_artifacts:
+          path: ./newman/
+      - store_test_results:
+          path: ./newman
