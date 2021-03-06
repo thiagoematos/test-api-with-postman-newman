@@ -14,11 +14,11 @@ jobs:
           command: docker -v
       - run:
           name: "Posso fazer pull de imagens?"
-          command: docker build -t minha-versao-do-postman .
+          command: docker build -t postman-com-environment .
       - run:
           name: "A imagem está listada?"
           command: docker images
       - run:
           name: "Usando a imagem para rodar o container"
-          command: docker run -t minha-versao-do-postman run "GoogleTest.postman_collection.json -r htmlextra"
+          command: docker run -t postman-com-environment run https://www.getpostman.com/collections/8a0c9bc08f062d12dcda
 
