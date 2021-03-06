@@ -9,4 +9,11 @@ jobs:
       - run:
           name: "Testing"
           command: echo "Hi"
+      - run:
+          name: "Qual versão do docker?"
+          command: docker -v
+      - run:
+          name: "Posso fazer pull de imagens?"
+          command: docker puull postman/newman
+
 
