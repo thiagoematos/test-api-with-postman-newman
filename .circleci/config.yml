@@ -14,6 +14,6 @@ jobs:
           command: docker -v
       - run:
           name: "Posso fazer pull de imagens?"
-          command: docker pull postman/newman
+          command: docker build -t my-version-of-newman .
 
 
