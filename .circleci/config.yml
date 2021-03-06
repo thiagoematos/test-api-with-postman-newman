@@ -11,5 +11,5 @@ jobs:
           command: echo "Hi"
       - run:
           name: "Posso instalar o nodejs?"
-          command: apt install nodejs
+          command: nvm -v
 
