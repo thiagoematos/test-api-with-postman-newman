@@ -7,5 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Posso instalar o nodejs?"
-          command: npm -v
+          name: "Run"
+          command: |
+            npm -v
+            npm install
+            npm run report
