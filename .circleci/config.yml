@@ -11,7 +11,5 @@ jobs:
           command: echo "Hi"
       - run:
           name: "Posso instalar o nodejs?"
-          command: |
-            apt install nodejs
-            npm --version
+          command: apt install nodejs
 
