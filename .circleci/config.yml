@@ -7,9 +7,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Testing"
-          command: echo "Hi"
-      - run:
           name: "Posso instalar o nodejs?"
-          command: nvm -v
-
+          command: npm -v
