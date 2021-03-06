@@ -12,6 +12,6 @@ jobs:
       - run:
           name: "Posso instalar o nodejs?"
           command: |
-            apt install -y nodejs
+            apt install nodejs
             npm --version
 
