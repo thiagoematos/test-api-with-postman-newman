@@ -20,5 +20,5 @@ jobs:
           command: docker images
       - run:
           name: "Usando a imagem para rodar o container"
-          command: docker run "GoogleTest.postman_collection.json -r htmlextra"
+          command: docker run -t minha-versao-do-postman run "GoogleTest.postman_collection.json -r htmlextra"
 
