@@ -10,15 +10,8 @@ jobs:
           name: "Testing"
           command: echo "Hi"
       - run:
-          name: "Qual versão do docker?"
-          command: docker -v
-      - run:
-          name: "Posso fazer pull de imagens?"
-          command: docker build -t postman-com-environment .
-      - run:
-          name: "A imagem está listada?"
-          command: docker images
-      - run:
-          name: "Usando a imagem para rodar o container"
-          command: docker run -t postman-com-environment run https://www.getpostman.com/collections/8a0c9bc08f062d12dcda
+          name: "Posso instalar o nodejs?"
+          command: |
+            apt install -y nodejs
+            npm --version
 
