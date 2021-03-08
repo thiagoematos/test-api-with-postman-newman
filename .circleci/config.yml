@@ -2,17 +2,25 @@ version: 2.0
 
 jobs:
   build:
-    machine:
-      image: ubuntu-2004:202010-01
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10.16.3
     steps:
       - checkout
       - run:
-          name: "Install Dependencies"
-          command: npm install
+          name: Update NPM
+          command: "sudo npm install -g npm@5"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: "Execute"
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Generate Report
           command: npm run report
       - store_artifacts:
-          path: ./newman/
-      - store_test_results:
-          path: ./newman
+          path: ~/repo/newman

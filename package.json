@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "report": "npx newman run GoogleTest.postman_collection.json -r htmlextra"
+    "report": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/thiagoematos/test-api-with-postman-newman#readme",
   "dependencies": {
     "newman": "^5.2.2",
-    "newman-reporter-htmlextra": "^1.20.1"
+    "newman-reporter-htmlextra": "^1.20.1",
+    "socks-proxy-agent": "^5.0.0"
   }
 }
